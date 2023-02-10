@@ -1,3 +1,5 @@
 .homebody{
     background-image: url(https://media.tenor.com/uqOIuxCZPqgAAAAd/china-flag-chinese.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
