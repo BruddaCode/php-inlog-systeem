@@ -6,6 +6,9 @@
     <link rel="shortcut icon" href=https://imgs.search.brave.com/_416vqX3n8DoXjvlABlde7mWyW3mvmbyQC0jneAbeLI/rs:fit:474:225:1/g:ce/aHR0cHM6Ly90c2Uz/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5G/MEp0bnczUXZNbF9L/UjhURFVFa1ZnSGFI/YSZwaWQ9QXBp>
 	 <script src="./assets/scripts/audio_player.js"></script> 
 
+
+    <link rel="shortcut icon" href="assets/style/troll.webp">
+
 </head>
 <body class="homebody">
     <div class="header">

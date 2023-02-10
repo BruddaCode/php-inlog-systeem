@@ -1,3 +1,18 @@
 .homebody{
-    background-image: url(https://media.tenor.com/uqOIuxCZPqgAAAAd/china-flag-chinese.gif);
+    background-image: url("assets/style/china-flag-chinese.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.content{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    padding: 36px;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-top: 250px;
+    font-family: 'comic sans ms';
+    font-size: 20px;
+    color: white;
 }
