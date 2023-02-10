@@ -20,4 +20,11 @@
     font-family: 'chopsuey';
     font-size: 20px;
     color: white;
+    align-items: center;
+    text-align: center;
+}
+
+.inlogform{
+    align-items: center;
+    text-align: center;
 }
