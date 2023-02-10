@@ -8,17 +8,18 @@
 <body class="homebody">
     <div class="content">
         <form class="inlog" action="index.php" method="post">
-            <img class='ccp' src="assets/images/ccp.png">
+            <img class="ccp" src="assets/images/ccp.png">
+            <br>
             <br>
             <label for="username">Username</label> <br>
-            <input type="text" name="username" required>
+            <input class="inlog-field" type="text" name="username" required>
             <br>
             <br>
             <label for="wachtwoord">Password</label> <br>
-            <input type="password" name="wachtwoord" required>
+            <input class="inlog-field" type="password" name="wachtwoord" required>
             <br>
             <br>
-            <input id="inlog-button" type="submit" value="Login" name="login-btn">
+            <input class="inlog-button" type="submit" value="Login" name="login-btn">
             <br>
             <p><a onclick="naarRegister()">Click here to register</a></p>
         </form>
