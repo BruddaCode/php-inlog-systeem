@@ -24,6 +24,11 @@
     text-align: center;
 }
 
+.ccp {
+    height: 100px;
+    width: 100px;
+}
+
 .inlogform{
     align-items: center;
     text-align: center;

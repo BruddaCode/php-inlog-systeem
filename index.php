@@ -9,6 +9,8 @@
 <body class="homebody">
     <div class="content">
         <form class="inlog" action="index.php" method="post">
+            <img class='ccp' src="assets/images/ccp.png">
+            <br>
             <label for="username">Username</label> <br>
             <input type="text" name="username" required>
             <br>
