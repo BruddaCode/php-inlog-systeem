@@ -8,21 +8,18 @@
 </head>
 <body class="homebody">
     <div class="content">
-        <form method="post" action="login.php">
-            <table>
-                <tr>
-                    <td>Gebruikersnaam:</td>
-                    <td><input type="text" name="username" class="textInput"></td>
-                </tr>
-                <tr>
-                    <td>Wachtwoord:</td>
-                    <td><input type="password" name="password" class="textInput"></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="login_btn" value="Inloggen"></td>
-                </tr>
-            </table>
+        <form class="inlog" action="index.php" method="post">
+            <label for="username">Username</label> <br>
+            <input type="text" name="username" required>
+            <br>
+            <br>
+            <label for="wachtwoord">Password</label> <br>
+            <input type="password" name="wachtwoord" required>
+            <br>
+            <br>
+            <input id="inlog-button" type="submit" value="Login" name="login-btn">
+            <br>
+            <p><a onclick="naarRegister()">Click here to register</a></p>
         </form>
     </div>
 </body>
