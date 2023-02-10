@@ -1,3 +1,8 @@
+@font-face {
+    font-family: ChopsUey;
+    src:url(../fonts/ChopsUey.ttf);
+}
+
 .homebody{
     background-image: url("../images/china-flag-chinese.gif");
     background-size: cover;
@@ -11,8 +16,8 @@
     width: fit-content;
     height: fit-content;
     margin: auto;
-    margin-top: 250px;
-    font-family: 'comic sans ms';
+    margin-top: 300px;
+    font-family: 'chopsuey';
     font-size: 20px;
     color: white;
 }
