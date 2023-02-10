@@ -5,7 +5,7 @@ audio.addEventListener("canplaythrough", (event) => {
 	audio.play();
 });
 
-document.body.addEventListener("click", (event) => {
+document.addEventListener("click", (event) => {
 	if(!isPlaying ) audio.play();
 	
 
