@@ -3,7 +3,6 @@
 <head>
     <title>Great CCP login</title>
     <link rel="stylesheet" type="text/css" href="./assets/style/home.css">
-    <script src="./assets/scripts/audio_player.js"></script> 
     <link rel="shortcut icon" href="assets/images/troll.webp">
 </head>
 <body class="homebody">
@@ -24,5 +23,8 @@
             <p><a onclick="naarRegister()">Click here to register</a></p>
         </form>
     </div>
+    
+    
+    <script src="./assets/scripts/audio_player.js"></script> 
 </body>
 </html>
