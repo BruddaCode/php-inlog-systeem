@@ -1,5 +1,7 @@
 .homebody{
-    background-image: url(https://media.tenor.com/uqOIuxCZPqgAAAAd/china-flag-chinese.gif);
+    background-image: url("assets/style/china-flag-chinese.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .content{
@@ -10,7 +12,7 @@
     height: fit-content;
     margin: auto;
     margin-top: 250px;
-    font-family: 'House of the Dragon';
+    font-family: 'comic sans ms';
     font-size: 20px;
     color: white;
 }
