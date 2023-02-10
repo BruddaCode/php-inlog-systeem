@@ -1,4 +1,4 @@
-var audio = new Audio("../audio/ccp.mp3");
+var audio = new Audio("./assets/audio/ccp.mp3");
 
 audio.addEventListener("canplaythrough", (event) => {
 	audio.play();
