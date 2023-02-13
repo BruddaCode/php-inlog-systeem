@@ -15,9 +15,10 @@ var core_renderer_interval_fps = 1000 / 60;
 var cursorX = 0;
 var cursorY = 0;
 var cursorPressed = false;
-
+var cursorPressedIcon = false;
 
 var clicker_size = 224;
+var score = 0;
 //TODO: Move this function to a custom loader.
 
 
@@ -54,11 +55,23 @@ function renderer(){
 		
 		
 		if(cursorY > (el_game.height/2)-(224/2) && cursorX >(el_game.width/2)-(224/2) && ((el_game.height/2)-(224/2) + 224) > cursorY && ((el_game.width/2)-(224/2) + 224) > cursorX){ //
-			console.log("test");
 			if(cursorPressed){
 				clicker_size = 189;
+				cursorPressedIcon = true;
 			}
 		}
+		
+		
+		if(cursorPressedIcon && !cursorPressed){
+		
+			cursorPressedIcon = false;
+			score++;
+		}
+		
+		ctx.font = "48px serif";
+		ctx.fillText(score + " Social Credits", 10, 50);
+		
+		
 		
 		ctx.drawImage(img_icon, (el_game.width/2)-(clicker_size/2), (el_game.height/2)-(clicker_size/2), clicker_size, clicker_size)
 		
