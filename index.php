@@ -1,9 +1,26 @@
 <?php
+    session_start();
+    include("./backend/login.php");
+    include("./backend/register.php");
 
-// Include the database connection file
-//inlog script????
-//register script????
 
+    if(isset($_POST["username"]) && isset($_POST["wachtwoord"])){
+
+        $login = new login($_POST["username"], $_POST["wachtwoord"]);
+        if($login->login()) 
+            header("Location: ./home.php");
+        else 
+            echo "Login failed";
+        
+    }
+    
+    if(isset($_POST["regUsername"]) && isset($_POST["regWachtwoord"]) && isset($_POST["regEmail"])){
+
+        $register = new register($_POST["regUsername"], $_POST["regWachtwoord"], $_POST["regEmail"]);
+        $register->register();
+        header("Location: ./index.php");
+        
+    }
 ?>
 
 <!DOCTYPE html>
