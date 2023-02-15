@@ -11,6 +11,7 @@
             header("Location: ./home.php");
         else 
             echo "Login failed";
+            session_destroy();
         
     }
     
@@ -19,7 +20,7 @@
         $register = new register($_POST["regUsername"], $_POST["regWachtwoord"], $_POST["regEmail"]);
         $register->register();
         header("Location: ./index.php");
-        
+
     }
 ?>
 
