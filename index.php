@@ -1,3 +1,11 @@
+<?php
+
+// Include the database connection file
+//inlog script????
+//register script????
+
+?>
+
 <!DOCTYPE html>
 <meta charset="utf-8" name="viewport">
 
@@ -65,5 +73,6 @@
     </div>
 
     <script src="./assets/scripts/audio_player.js"></script> 
+
 </body>
 </html>
