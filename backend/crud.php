@@ -1,7 +1,7 @@
 <?php 
 
 	// Include the config file
-	include_once("./config.php");
+	include_once("./backend/config.php");
 	
 
 
