@@ -8,7 +8,7 @@ console.log("renderer loaded");
 
 var bg_rotation_degree = 0;
 var core_loaded_assets = 0;
-var core_renderer_interval_fps = 1000 / 60; 
+var core_renderer_interval_fps = 1000 / 24; 
 
 
 //cursor location
@@ -19,6 +19,7 @@ var cursorPressedIcon = false;
 
 var clicker_size = 224;
 var score = 0;
+var good_jobs = [];
 //TODO: Move this function to a custom loader.
 
 
@@ -41,23 +42,37 @@ img_cursor.onload = function () {
 	core_loaded_assets++;
 }
 
+var img_good_job = new Image();
+img_good_job.src = "./assets/images/good_job.png";
+img_good_job.onload = function () {
+	core_loaded_assets++;
+}
 
 
 function renderer(){
 	ctx.clearRect(0, 0, el_game.width, el_game.height);
 	clicker_size = 224;
 	
-	if(core_loaded_assets == 3){
+	if(core_loaded_assets == 4){
 		bg_rotation_degree += 0.15;
 		
 		//Rendering Background
 		render_background();
 		
 		
-		if(cursorY > (el_game.height/2)-(224/2) && cursorX >(el_game.width/2)-(224/2) && ((el_game.height/2)-(224/2) + 224) > cursorY && ((el_game.width/2)-(224/2) + 224) > cursorX){ //
+		
+		
+		
+		
+		
+		
+		
+		if(cursorY > (el_game.height/2)-(224/2) && cursorX > (el_game.width/2)-(224/2) && ((el_game.height/2)-(224/2) + 224) > cursorY && ((el_game.width/2)-(224/2) + 224) > cursorX){ //
 			if(cursorPressed){
 				clicker_size = 189;
 				cursorPressedIcon = true;
+				
+				
 			}
 		}
 		
@@ -66,6 +81,18 @@ function renderer(){
 		
 			cursorPressedIcon = false;
 			score++;
+			
+			
+			var rand_x = Math.floor(Math.random() * (el_game.width/2)-(224/2)) + 224;
+			var rand_y = Math.floor(Math.random() * (el_game.height/2)) + 224 ;
+			
+			var object = {
+				x: rand_x,
+				y: rand_y,
+				t: 0
+			}
+			
+			good_jobs.push(object);
 		}
 		
 		ctx.font = "48px serif";
@@ -74,6 +101,30 @@ function renderer(){
 		
 		
 		ctx.drawImage(img_icon, (el_game.width/2)-(clicker_size/2), (el_game.height/2)-(clicker_size/2), clicker_size, clicker_size)
+		
+		for (var i = 0; i < good_jobs.length; i++) {
+			var object = good_jobs[i];
+			
+			//TODO: read t add 1 and y add 2 till t is 60
+			
+			ctx.drawImage(img_good_job, object.x, object.y, 42, 42);
+		
+			
+			
+			if(object.t >= 60){
+				good_jobs.splice(i,1);
+			} else {
+			
+				object.y--;
+				object.t++;
+			
+				good_jobs[i] = object;
+			}
+			
+		
+		}
+		
+		
 		
 		
 		ctx.drawImage(img_cursor, cursorX, cursorY);
