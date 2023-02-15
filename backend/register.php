@@ -15,7 +15,7 @@
 		}
 
 		public function register() {
-			$this->insert("users", array("username" => $this->username, "password" => $this->password, "email" => $this->email));
+			$this->insert("users", array("username" => $this->username, "password" => $this->password, "email" => $this->email), "creation_date" => 0);
 		}
 	}
 ?>
