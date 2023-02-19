@@ -19,18 +19,18 @@
 		}
 
 
-		public function insert($table,$para=array()){
+		public function insert($table, $para){
 
 			$table_columns = implode(',', array_keys($para));
 			$table_value = implode("','", $para);
 
 			$sql="INSERT INTO $table($table_columns) VALUES('$table_value')";
 
-			$result = $this->mysqli->query($sql);
+			return $this->mysqli->query($sql);
 		}
 
 
-		public function update($table,$para=array(),$id){
+		public function update($table, $para, $id){
 
 			$args = array();
 
@@ -41,7 +41,7 @@
 			$sql="UPDATE  $table SET " . implode(',', $args);
 			$sql .=" WHERE $id";
 
-			$result = $this->mysqli->query($sql);
+			return $this->mysqli->query($sql);
 		}
 
 
@@ -51,19 +51,27 @@
 			$sql .=" WHERE $id ";
 
 
-			$result = $this->mysqli->query($sql);
+			return $this->mysqli->query($sql);
 		}
 
 
 
-
+		
 		public function select($table, $rows="*", $where = null){
+		
 			if ($where != null) 
 				$sql="SELECT $rows FROM $table WHERE $where";
 			else
 				$sql="SELECT $rows FROM $table";
+				
+			$result = $this->mysqli->query($sql);
 
-			$this->sql = $result = $this->mysqli->query($sql);
+			$sql_object = array();
+			$sql_object["num_rows"] = $result->num_rows;
+			$sql_object["rows"] = $result->fetch_array(MYSQLI_ASSOC);
+
+			return $sql_object;
+			
 		}
 
 

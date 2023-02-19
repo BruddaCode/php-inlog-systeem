@@ -3,7 +3,7 @@
 	
 	class config {
 		protected $db_host = "localhost";
-		protected $db_user = "root";
+		protected $db_user = "production";
 		protected $db_pass = "";
 		protected $db_data = "china_game";
 	}
