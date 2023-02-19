@@ -1,27 +1,45 @@
 <?php
-    session_start();
-    include("./backend/login.php");
-    include("./backend/register.php");
+	//Debugging 
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+
+	session_start();
+	
+	include("./backend/login.php");
+	include("./backend/register.php");
 
 
-    if(isset($_POST["username"]) && isset($_POST["wachtwoord"])){
+	if(isset($_POST["username"]) && isset($_POST["wachtwoord"])){
 
-        $login = new login($_POST["username"], $_POST["wachtwoord"]);
-        if($login->login()) 
-            header("Location: ./home.php");
-        else 
-            echo "Login failed";
-            session_destroy();
-        
-    }
-    
-    if(isset($_POST["regUsername"]) && isset($_POST["regWachtwoord"]) && isset($_POST["regEmail"])){
+		// Get login object
+		$login = new login($_POST["username"], $_POST["wachtwoord"]);
+		$login_object = $login->login();
 
-        $register = new register($_POST["regUsername"], $_POST["regWachtwoord"], $_POST["regEmail"]);
-        $register->register();
-        header("Location: ./index.php");
+		// Check login object and make session
+		if($login_object["logged_in"]) {
+			$_SESSION["uid"] = $login_object["uid"];
+			$_SESSION["username"] = $login_object["username"];
+			header("Location: ./game.php");
+		
+		} else {
+			// Fail message
+			$message = "Login Failed, Please check your username or password.";	
+		}
 
-    }
+	}
+
+	if(isset($_POST["regUsername"]) && isset($_POST["regWachtwoord"]) && isset($_POST["regEmail"])){
+
+		$register = new register($_POST["regUsername"], $_POST["regWachtwoord"], $_POST["regEmail"]);
+		if($register->register()){
+			$message = "Successfully registered.";
+		} else {
+			$message = "Username or Email already exist.";
+		}
+		
+
+	}
 ?>
 
 <!DOCTYPE html>
@@ -49,6 +67,9 @@
 
 <body class="homebody">
     <div class="content" id="inlog-inhoudJS" >
+    
+    	<?php if(isset($message)) echo $message; ?>
+    	
         <form class="inlogform" action="index.php" method="post">
             <img class="ccp" src="assets/images/ccp.png">
             <br>
