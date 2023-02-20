@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 	//Debugging 
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
@@ -8,10 +9,16 @@
 	
 	include("./backend/login.php");
 	include("./backend/register.php");
+=======
+    //sessions kunnen anders (denk ik)
+    include("./backend/login.php");
+    include("./backend/register.php");
+>>>>>>> Stashed changes
 
 
 	if(isset($_POST["username"]) && isset($_POST["wachtwoord"])){
 
+<<<<<<< Updated upstream
 		// Get login object
 		$login = new login($_POST["username"], $_POST["wachtwoord"]);
 		$login_object = $login->login();
@@ -26,6 +33,23 @@
 			// Fail message
 			$message = "Login Failed, Please check your username or password.";	
 		}
+=======
+        $login = new login($_POST["username"], $_POST["wachtwoord"]);
+        if($login->login()) 
+            header("Location: ./home.php");
+        else 
+            //session_destroy();
+            echo "Login failed";
+        
+    }
+    
+    if(isset($_POST["regUsername"]) && isset($_POST["regWachtwoord"]) && isset($_POST["regEmail"])){
+
+        $register = new register($_POST["regUsername"], $_POST["regWachtwoord"], $_POST["regEmail"]);
+        $register->register();
+        //session_destroy();
+        header("Location: ./index.php");
+>>>>>>> Stashed changes
 
 	}
 
@@ -50,7 +74,7 @@
 <head>
     <title>Great CCP login</title>
     <link rel="stylesheet" type="text/css" href="./assets/style/home.css">
-    <link rel="shortcut icon" href="assets/images/troll.webp">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
 
     <script>
         function toRegister() {
