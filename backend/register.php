@@ -16,9 +16,9 @@
 		}
 
 		public function register() {
-			$duplicate_check = $this->select("users", "*", "username='" . $this->username . "' OR email='" . $this->email . "' LIMIT 1")->num_rows;
+			$sql_object = $this->select("users", "*", "username='" . $this->username . "' OR email='" . $this->email . "' LIMIT 1");
 			
-			if($duplicate_check){
+			if($sql_object["num_rows"] == 1){
 				return false;
 			} else {
 				$this->insert("users", array("username" => $this->username, "password" => $this->password, "email" => $this->email, "creation_date" => 0));
