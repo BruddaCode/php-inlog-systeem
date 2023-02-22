@@ -24,6 +24,23 @@
     text-align: center;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: 0px auto;
+}
+
+.errorMessage{
+    background-color: rgb(0, 0, 0);
+    height: fit-content;
+    width: 225px;
+    padding: 8px;
+    color: white;
+    text-align: center;
+    word-wrap: normal;
+    font-family: 'chopsuey';
+    font-size: 20px;
+}
+
 .ccp {
     height: 140px;
     width: 140px;
