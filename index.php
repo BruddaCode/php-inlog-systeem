@@ -67,7 +67,7 @@
 
 <body class="homebody">
     
-    <div class="grid">   
+    <div class="grid"> 
         <div class="grid-item">
             <?php 
             if(isset($message)) 
