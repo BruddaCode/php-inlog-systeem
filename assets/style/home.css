@@ -41,6 +41,14 @@
     font-size: 20px;
 }
 
+.logOut{
+    padding-bottom: 50%;
+    color: white;
+    font-family: 'chopsuey';
+    font-size: 20px;
+    cursor: pointer;
+}
+
 .ccp {
     height: 140px;
     width: 140px;

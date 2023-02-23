@@ -19,10 +19,11 @@
 			font-smooth: never;
 			/*-webkit-font-smoothing : none;*/
 		}
-
 		</style>
 	</head>
+
 	<body>
+		<button class="logOut" type="button" onclick="location.href='./index.php'">Log Out</button>
 		<canvas id="game" width="512" height="832" style="border:1px solid #000000;"></canvas>
 		
 		<script src="./assets/scripts/game_renderer.js" ></script>
